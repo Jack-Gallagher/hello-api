@@ -27,10 +27,11 @@ jobs:
       run: ls -l
 
     - name: Build
-      run: go build -v ./cmd/main.go
+      run: go build -o hello ./cmd/main.go
 
     - name: mkdir
-      run: mkdir artifacts
+      run: mkdir artifacts 
+           cp hello ./artifacts
 
     - name: ls
       run: ls -l
