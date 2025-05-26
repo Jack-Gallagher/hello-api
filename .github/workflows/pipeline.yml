@@ -20,22 +20,12 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: '1.20'
-    - name: pwd
-      run: echo $pwd
-
-    - name: ls
-      run: ls -l
 
     - name: Build
+      env:
+        GOOS: darwin
+        GOARCH: arm64
       run: go build -o artifacts/hello ./cmd/main.go
-
-    - name: ls
-      run: ls -l
-
-#    - name: Copy Files #
-#      run: |
-#        mkdir  artifacts
-#        cp hello artifacts/.
 
     - name: Archive #
       uses: actions/upload-artifact@v4
