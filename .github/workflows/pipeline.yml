@@ -32,8 +32,13 @@ jobs:
     - name: ls
       run: ls -l
 
+    - name: Copy Files #
+      run: |
+        mkdir  artifacts
+        cp hello artifacts/.
+
     - name: Archive #
       uses: actions/upload-artifact@v2
       with:
         name: api #
-        path: artifacts/
+        path: artifacts
