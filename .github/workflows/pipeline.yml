@@ -29,12 +29,12 @@ jobs:
     - name: Build
       run: go build -o hello ./cmd/main.go
 
-    - name: mkdir
-      run: mkdir artifacts 
-           cp hello ./artifacts
-
     - name: ls
       run: ls -l
+
+    - name: mkdir
+      run: mkdir artifacts
+        cp hello artifacts/.
 #    - name: Copy Files #
 #      run: |
 #        mkdir  artifacts
